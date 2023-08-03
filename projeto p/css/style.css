@@ -1,0 +1,677 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lisu+Bosa:wght@600&family=Lobster&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+header {
+    width: 100%;
+    height: 75px;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 99;
+    box-shadow: 1px 1px 1px rgba(230, 0, 255, 0.515);
+}
+
+header .logo ul {
+    display: flex;
+    align-items: center;
+}
+
+header .logo ul li {
+    padding-left: 1rem;
+    list-style: none;
+}
+
+header .logo ul li a img{
+    width: 4.5rem;
+    height: 4.5rem;
+    margin: 2rem 0 2rem 0;
+}
+
+header .logo ul li p {
+    /*font-family: 'Lobster', cursive;*/
+    font-family: 'Lisu Bosa', serif;
+    font-size: 2rem;
+    color: #fff;
+    text-shadow: 1px 1px 1px rgb(255, 39, 39);
+    cursor: default;
+}
+
+header .menu ul{
+    display: flex;
+}
+
+header .menu ul li{
+    padding: 0 15px;
+    list-style: none;
+}
+
+header .menu ul li a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+    transition: 0.5s ease;
+}
+
+header .menu ul li a:hover{ 
+    color: #f134ff;
+}
+
+header .menu-mobile{
+    display: none;
+}
+
+header .btn-mobile{
+    display: none;
+}
+
+header .menu ion-icon{
+    padding-right: 5px;
+}
+
+/*================== MAIN HOME =================*/
+#home .container{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to right, rgba(255,255,255,0.1), rgba(0,0,0,1)), url(../images/background2.jpeg);
+    background-size: cover;
+}
+
+#home .container .icons{
+    width: 10%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 30px;
+    position: fixed;
+    z-index: 999;
+}
+
+#home .container .icons ion-icon{
+    padding: 2rem 0;
+    font-size: 2rem;
+    color: #fff;
+    transition: 0.5s ease;
+}
+
+#home .container .icons ion-icon:hover{
+    color: #9000f0;
+}
+
+#home .container .title{
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 0 60px;
+}
+
+#home .container .title h1{
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 4rem;
+    letter-spacing: 5px;
+    text-shadow: 6px 4px 2px rgb(72, 0, 110);
+}
+
+#home .container .title h2{
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 2rem;
+    margin-left: 30px;
+    text-shadow: 5px 5px 4px black;
+}
+
+#home .container .title h3{
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 5px;
+    margin-top: 30px;
+    margin-bottom: 35px;
+    text-shadow: 5px 5px 4px black;
+}
+
+#home .container .title h5, ion-icons{
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 1rem;
+}
+
+#home .container .title #linha{
+    width: 600px;
+    height: 3px;
+    background: #fff;
+    margin-top: 2px;
+    margin-bottom: 10px;
+}
+
+/*================== SECTION ABOUT =================*/
+#about .container{
+    width: 100%;
+    height: 100vh;
+    background: #31064e;
+    background-size: cover;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 2rem;
+}
+
+#about .container .title{
+    width: 90%;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 0 60px;
+}
+
+#about .container .title h1{
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 2rem;
+    text-align: left;
+}
+
+#about .container .title p{
+    color: #fff;
+    width: 500px;
+    margin-top: 30px;
+    text-align: justify;
+}
+
+/*#about .container .image{
+    margin-top: 6rem;
+    margin-right: 4rem;
+}
+
+#about .container .image img{
+    height: 500px;
+    width: 800px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}*/
+
+.slider {
+    margin: 6rem 4rem 0 0;
+    width: 800px;
+    height: 400px;
+    overflow: hidden;
+}
+
+.slides {
+    width: 400%;
+    height: 400px;
+    position: flex;
+}
+
+.slides input {
+    display: none;
+}
+
+.slide {
+    width: 25%;
+    position: relative;
+}
+.slide img {
+    width: 800px;
+}
+
+.manual-navigation {
+    position: absolute;
+    width: 800px;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+}
+
+.manual-btn {
+    border: 2px solid #fff;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+#about .manual-btn:not(:last-child) {
+    margin-right: 40px;
+}
+
+#about .manual-btn:hover {
+    background-color: #fff;
+}
+
+#about #radio1:checked ~ .slide.first {
+    margin-left: 0;
+}
+
+#about #radio2:checked ~ .first {
+    margin-left: -25%;
+}
+
+/*================== SECTION CONTATE =================*/
+#contact .container{
+    width: 100%;
+    height: 100vh;
+    background: url(image/background.jpg);
+    background-size: cover;
+}
+
+#contact .container .content-contact{
+    width: 80%;
+    height: 60vh;
+    margin: 0 auto;
+    padding: 200px 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+#contact .content-contact .contact-left{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+}
+
+#contact .content-contact .contact-left h1{
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+#contact .content-contact .linha{
+    width: 350px;
+    height: 3px;
+    background: #fff;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#contact .content-contact .contact-left ion-icon{
+    font-size: 2rem;
+    padding: 20px 0;
+}
+
+#contact .content-contact .contact-left span{
+    font-size: 1.2rem;
+    padding: 5px 0;
+}
+
+#contact .content-contact .contact-right{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+}
+
+#contact .content-contact .contact-right h1{
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+#contact .content-contact .contact-right .linha{
+    margin-bottom: 60px;
+}
+
+#contact .content-contact .contact-right input[type=email],
+#contact .content-contact .contact-right input[type=text]{
+    border-radius: 10px;
+    border: none;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    outline: none;
+}
+
+#contact .content-contact .contact-right textarea{
+    width: 100%;
+    height: 120px;
+    border-radius: 20px;
+    border: none;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    outline: none;
+    resize: none;
+    padding: 15px 20px;
+}
+
+/*================== FOOTER =================*/
+footer{
+    width: 100%;
+    height: 4rem;
+    color: #fff;
+    line-height: 4rem;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    position: relative;
+    top: -60px;
+}
+
+/*================== RESPONSIVE =================*/
+
+@media screen and (max-width: 1280px){
+    #home .container .icons ion-icon{
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 1250px){
+    body{
+        background: url(image/gradient_2.jpg);
+    }
+    header{
+        background: none;
+    }
+    header .logo{
+        width: 600px;
+    }
+    header .menu{
+        display: none;
+    }
+    header .btn-mobile{
+        display: block;
+    }
+    header .btn-mobile ion-icon{
+        color: #fff;
+        font-size: 1.5rem;
+    }
+    header .menu-mobile{
+        display: none;
+        width: 50%;
+        box-shadow: 0 0 15px 0 rgba(201, 76, 255, 0.5);
+        position: fixed;
+        top: 20px;
+        border-radius: 10px;
+        background: #9d26ff;
+    }
+    header .menu-mobile  ul{
+        text-align: center;
+    }
+    header .menu-mobile ul li{
+        list-style: none;
+        padding: 12px 0;
+    }
+    header .menu-mobile ul li a{
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #fff;
+    }
+    #home .container .icons{
+        padding: 0 20px;
+    }
+    #home .container .title{
+        align-items: center;
+    }
+    #home .container .title h1{
+        font-size: 5rem;
+    }
+    #home .container .title h2{
+        font-size: 1.2rem;
+    }
+    #home .container .title h3{
+        font-size: 0.9rem;
+    }
+    #contact .container .content-contact{
+        width: 100%;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+    }
+    #contact .container .content-contact .contact-left h1{
+        font-size: 1.5rem;
+    }
+    #contact .container .content-contact .contact-left ion-icon{
+        font-size: 1rem;
+        padding: 5px 0;
+    }
+    #contact .content-contact .contact-left{
+        width: 50%;
+        padding: 10rem;
+    }
+    #contact .content-contact .contact-right{
+        width: 50%;
+        padding: 10rem;
+    }
+    #contact .content-contact .contact-left span{
+        font-size: 1rem;
+        padding: 5px 0;
+    }
+    #contact .container .content-contact .contact-right h1{
+        font-size: 1.5rem;
+        margin-top: 80px;
+    }
+    #contact .content-contact .contact-right input[type=email],
+    #contact .content-contact .contact-right input[type=text]{
+        padding: 10px 15px;
+        font-size: 1rem;
+    }
+    #contact .content-contact .contact-right textarea{
+        padding: 10px 15px;
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 1000px){
+    body{
+        background: url(image/gradient_2.jpg);
+    }
+    header{
+        background: none;
+    }
+    header .logo{
+        width: 600px;
+    }
+    header .menu{
+        display: none;
+    }
+    header .btn-mobile{
+        display: block;
+    }
+    header .btn-mobile ion-icon{
+        color: #fff;
+        font-size: 1.5rem;
+    }
+    header .menu-mobile{
+        display: none;
+        width: 50%;
+        height: 20vh;
+        box-shadow: 0 0 15px 0 rgba(201, 76, 255, 0.5);
+        position: fixed;
+        top: 20px;
+        border-radius: 10px;
+        background: #9d26ff;
+    }
+    header .menu-mobile  ul{
+        text-align: center;
+    }
+    header ,.menu-mobile ul li{
+        list-style: none;
+        padding: 12px 0;
+    }
+    header ,.menu-mobile ul li a{
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #fff;
+    }
+    #home .container .icons{
+        padding: 0 20px;
+    }
+    #home .container .title{
+        align-items: center;
+    }
+    #home .container .title h1{
+        font-size: 5rem;
+    }
+    #home .container .title h2{
+        font-size: 1.2rem;
+    }
+    #home .container .title h3{
+        font-size: 0.9rem;
+    }
+    #contact .container .content-contact{
+        width: 100%;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    #contact .container .content-contact .contact-left h1{
+        font-size: 1.5rem;
+    }
+    #contact .container .content-contact .contact-left ion-icon{
+        font-size: 1rem;
+        padding: 5px 0;
+    }
+    #contact .content-contact .contact-left span{
+        font-size: 1rem;
+        padding: 5px 0;
+    }
+    #contact .container .content-contact .contact-right h1{
+        font-size: 1.5rem;
+        margin-top: 80px;
+    }
+    #contact .content-contact .contact-right input[type=email],
+    #contact .content-contact .contact-right input[type=text]{
+        padding: 10px 15px;
+        font-size: 1rem;
+    }
+    #contact .content-contact .contact-right textarea{
+        padding: 10px 15px;
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 960px){
+    body{
+        background: url(image/gradient_2.jpg);
+    }
+    header{
+        background: none;
+    }
+    header .logo{
+        width: 600px;
+    }
+    header .menu{
+        display: none;
+    }
+    header .btn-mobile{
+        display: block;
+    }
+    header .btn-mobile ion-icon{
+        color: #fff;
+        font-size: 1.5rem;
+    }
+    header .menu-mobile{
+        display: none;
+        width: 50%;
+        height: 20vh;
+        box-shadow: 0 0 15px 0 rgba(201, 76, 255, 0.5);
+        position: fixed;
+        top: 20px;
+        border-radius: 10px;
+        background: #9d26ff;
+    }
+    header .menu-mobile  ul{
+        text-align: center;
+    }
+    header ,.menu-mobile ul li{
+        list-style: none;
+        padding: 12px 0;
+    }
+    header ,.menu-mobile ul li a{
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #fff;
+    }
+    #home .container .icons{
+        padding: 0 20px;
+    }
+    #home .container .title{
+        align-items: center;
+    }
+    #home .container .title h1{
+        font-size: 5rem;
+    }
+    #home .container .title h2{
+        font-size: 1.2rem;
+    }
+    #home .container .title h3{
+        font-size: 0.9rem;
+    }
+    #contact .container .content-contact{
+        width: 100%;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    #contact .container .content-contact .contact-left h1{
+        font-size: 1.5rem;
+    }
+    #contact .container .content-contact .contact-left ion-icon{
+        font-size: 1rem;
+        padding: 5px 0;
+    }
+    #contact .content-contact .contact-left span{
+        font-size: 1rem;
+        padding: 5px 0;
+    }
+    #contact .container .content-contact .contact-right h1{
+        font-size: 1.5rem;
+        margin-top: 80px;
+    }
+    #contact .content-contact .contact-right input[type=email],
+    #contact .content-contact .contact-right input[type=text]{
+        padding: 10px 15px;
+        font-size: 1rem;
+    }
+    #contact .content-contact .contact-right textarea{
+        padding: 10px 15px;
+        font-size: 1rem;
+    }
+}
+@media screen and (max-width: 750px){
+    header{
+        padding: 10px;
+    }
+    #home .container .title h2{
+        letter-spacing: 30px;
+    }
+    #home .container .title h3{
+        letter-spacing: 10px;
+    }
+    #home .container .title{
+        padding: 10px 60px;
+    }
+    #home .container .title p{
+        width: 100%;
+        margin-top: 30px;
+    }
+}
