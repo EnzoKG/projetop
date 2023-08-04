@@ -21,14 +21,13 @@ body{
 
 header {
     width: 100%;
-    height: 75px;
+    height: 9vh;
     background: #000;
     display: flex;
     align-items: center;
     justify-content: space-between;
     position: fixed;
     z-index: 99;
-    box-shadow: 1px 1px 1px rgba(230, 0, 255, 0.515);
 }
 
 header .logo ul {
@@ -52,17 +51,24 @@ header .logo ul li p {
     font-family: 'Lisu Bosa', serif;
     font-size: 2rem;
     color: #fff;
-    text-shadow: 1px 1px 1px rgb(255, 39, 39);
+    text-shadow: 1px 1px 1px #8A2BE2;
     cursor: default;
+}
+
+header .menu {
+    position: relative;
+    display: flex;
 }
 
 header .menu ul{
     display: flex;
+    list-style-type: none;
 }
 
 header .menu ul li{
     padding: 0 15px;
     list-style: none;
+    display: inline-block;
 }
 
 header .menu ul li a{
@@ -70,10 +76,21 @@ header .menu ul li a{
     text-transform: uppercase;
     color: #fff;
     transition: 0.5s ease;
+    position: relative;
 }
 
 header .menu ul li a:hover{ 
     color: #f134ff;
+}
+
+header .menu a .line {
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #8A2BE2;
+    transition: width 0.3s;
 }
 
 header .menu-mobile{
@@ -98,7 +115,7 @@ header .menu ion-icon{
 
 #home .container .icons{
     width: 10%;
-    height: 80vh;
+    height: 50vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -142,6 +159,7 @@ header .menu ion-icon{
     font-size: 2rem;
     margin-left: 30px;
     text-shadow: 5px 5px 4px black;
+    margin-top: 15px;
 }
 
 #home .container .title h3{
@@ -158,6 +176,7 @@ header .menu ion-icon{
     color: #fff;
     font-family: 'Montserrat', sans-serif;
     margin-top: 1rem;
+    font-size: 1rem;
 }
 
 #home .container .title #linha{
@@ -216,149 +235,63 @@ header .menu ion-icon{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }*/
 
-.slider {
-    margin: 6rem 4rem 0 0;
-    width: 800px;
-    height: 400px;
-    overflow: hidden;
-}
-
-.slides {
-    width: 400%;
-    height: 400px;
-    position: flex;
-}
-
-.slides input {
-    display: none;
-}
-
-.slide {
-    width: 25%;
-    position: relative;
-}
-.slide img {
-    width: 800px;
-}
-
-.manual-navigation {
-    position: absolute;
-    width: 800px;
-    margin-top: -40px;
-    display: flex;
-    justify-content: center;
-}
-
-.manual-btn {
-    border: 2px solid #fff;
-    padding: 5px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 1s;
-}
-
-#about .manual-btn:not(:last-child) {
-    margin-right: 40px;
-}
-
-#about .manual-btn:hover {
-    background-color: #fff;
-}
-
-#about #radio1:checked ~ .slide.first {
-    margin-left: 0;
-}
-
-#about #radio2:checked ~ .first {
-    margin-left: -25%;
-}
 
 /*================== SECTION CONTATE =================*/
-#contact .container{
+#contact {
     width: 100%;
-    height: 100vh;
-    background: url(image/background.jpg);
-    background-size: cover;
+    height: 91vh;
+    position: relative;
+    background-color: #31064e;
 }
 
-#contact .container .content-contact{
-    width: 80%;
-    height: 60vh;
-    margin: 0 auto;
-    padding: 200px 0;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-}
-
-#contact .content-contact .contact-left{
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    color: #fff;
-}
-
-#contact .content-contact .contact-left h1{
-    font-size: 2rem;
-    text-transform: uppercase;
-}
-
-#contact .content-contact .linha{
-    width: 350px;
-    height: 3px;
-    background: #fff;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-#contact .content-contact .contact-left ion-icon{
-    font-size: 2rem;
-    padding: 20px 0;
-}
-
-#contact .content-contact .contact-left span{
-    font-size: 1.2rem;
-    padding: 5px 0;
-}
-
-#contact .content-contact .contact-right{
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    color: #fff;
-}
-
-#contact .content-contact .contact-right h1{
-    font-size: 2rem;
-    text-transform: uppercase;
-}
-
-#contact .content-contact .contact-right .linha{
-    margin-bottom: 60px;
-}
-
-#contact .content-contact .contact-right input[type=email],
-#contact .content-contact .contact-right input[type=text]{
+#contact .form {
+    background-color: #200433;
     border-radius: 10px;
-    border: none;
-    padding: 15px 20px;
-    margin-bottom: 20px;
-    font-size: 1.2rem;
-    font-weight: 600;
-    outline: none;
+    box-shadow: 2px 3px 10px #000;
+    padding: 20px;
+    max-width: 600px;
+    width: 100%;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-#contact .content-contact .contact-right textarea{
-    width: 100%;
-    height: 120px;
-    border-radius: 20px;
-    border: none;
+#contact .form h2 {
+    text-align: center;
     margin-bottom: 20px;
-    font-size: 1.2rem;
-    font-weight: 600;
-    outline: none;
-    resize: none;
-    padding: 15px 20px;
+    color: white;
+}
+
+#contact .form .txt {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: white;
+}
+
+#contact .form input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #fff;
+}
+
+#contact .form input[type="submit"] {
+    background-color: #641ed4;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 15px;
+    transition: 0.5s ease;
+}
+
+#contact .form input[type="submit"]:hover {
+    background-color: #9d26ff;
 }
 
 /*================== FOOTER =================*/
@@ -368,13 +301,11 @@ footer{
     color: #fff;
     line-height: 4rem;
     text-align: center;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgb(0, 0, 0);
     position: relative;
-    top: -60px;
 }
 
 /*================== RESPONSIVE =================*/
-
 @media screen and (max-width: 1280px){
     #home .container .icons ion-icon{
         font-size: 1.5rem;
