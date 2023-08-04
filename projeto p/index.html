@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Peçaí Delivery</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="images/favicon.png" />
+    <link rel="shortcut icon" href="images/acai.ico"/>
 </head>
 <body>
     <header>
@@ -20,15 +20,15 @@
             <ul>
                 <li><a href="#home"><ion-icon name="home-outline"></ion-icon>Início</a></li>
                 <li><a href="#about"><ion-icon name="help-circle-outline"></ion-icon>Nossa história</a></li>
+                <li><a href="#contact"><ion-icon name="send-outline"></ion-icon>Trabalhe conosco</a></li>
                 <li><a target="_blank" href="https://wa.me//5567998189284?text=Ol&#225&#44%20gostaria%20de%20fazer%20um%20pedido&#33"><ion-icon name="globe-outline"></ion-icon>Peçaí o seu</a></li>
-                <li><a href="#contact"><ion-icon name="call-outline"></ion-icon>Trabalhe conosco</a></li>
             </ul>
         </div>
         <div class="menu-mobile">
             <ul>
                 <li><a href="#home">Início</a></li>
                 <li><a href="#about">Nossa história</a></li>
-                <li><a href="#">Peçaí o seu</a></li>
+                <li><a href="https://wa.me//5567998189284?text=Ol&#225&#44%20gostaria%20de%20fazer%20um%20pedido&#33">Peçaí o seu</a></li>
                 <li><a href="#contact">Trabalhe conosco</a></li>
             </ul>
         </div>
@@ -58,47 +58,20 @@
                 <h1>Sobre a empresa:</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, dolore officia. Magni quidem consequuntur, cumque dolor distinctio dolorem iusto optio doloribus tempore quaerat veritatis cupiditate unde minima molestias adipisci repellat!</p>
             </div>
-            <div class="slider">
-                <div class="slides">
-                    <!--Radio Buttons-->
-                    <input type="radio" name="radio-btn" id="radio1">
-                    <input type="radio" name="radio-btn" id="radio2">
-                    <input type="radio" name="radio-btn" id="radio3">
-                    <input type="radio" name="radio-btn" id="radio4">
-
-                    <!--Slide images-->
-                    <div class="slide first">
-                        <img src="/images/background.png" alt="estabelecimento">
-                    </div>
-                    <div class="slide">
-                        <img src="/images/background.png" alt="estabelecimento">
-                    </div>
-                    <div class="slide">
-                        <img src="/images/background2.jpeg" alt="estabelecimento">
-                    </div>
-                    <div class="slide">
-                        <img src="/images/logo.png" alt="estabelecimento">
-                    </div>
-
-                    <!--Navigation auto-->
-                    <div class="navigation-auto">
-                        <div class="auto-btn1"></div>
-                        <div class="auto-btn2"></div>
-                        <div class="auto-btn3"></div>
-                        <div class="auto-btn4"></div>
-                    </div>
-                </div>
-                <div class="manual-navigation">
-                    <label for="radio1" class="manual-btn"></label>
-                    <label for="radio2" class="manual-btn"></label>
-                    <label for="radio3" class="manual-btn"></label>
-                    <label for="radio4" class="manual-btn"></label>
-                </div>
-            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <div class="form">            
+            <h2>Encaminhe seu currículo para nós!</h2>
+            <form id="form" action="/projeto p/pages/enviar_email.php" method="post" enctype="multipart/form-data">
+                <label class="txt" for="pdf_file">Selecione o arquivo PDF:</label>
+                <input type="file" id="pdf_file" name="pdf_file" accept=".pdf" required>
+                <input type="submit" value="Enviar">
+            </form>
         </div>
     </section>
     <footer>
-        <span>Copyright © 2022. Todos os direitos reservado.</span>
+        <span>Copyright © 2023. Todos os direitos reservados.</span>
     </footer>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
@@ -109,6 +82,26 @@
                 $(".menu-mobile").slideToggle("slow")
             })
         })
+
+        const links = document.querySelectorAll('.menu a');
+        let currentLine = null;
+
+        links.forEach(link => {
+            link.addEventListener('click', function (event) {
+                // Remove a linha anterior, se existir
+                if (currentLine) {
+                    currentLine.remove();
+                }
+                
+                const line = document.createElement('div');
+                line.classList.add('line');
+                this.appendChild(line);
+                setTimeout(() => line.style.width = this.offsetWidth + 'px', 50);
+
+                // Atualiza a referência para a nova linha criada
+                currentLine = line;
+            });
+        });
     </script>
 </body>
 </html>
