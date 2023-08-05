@@ -188,6 +188,81 @@ header .menu ion-icon{
 }
 
 /*================== SECTION ABOUT =================*/
+#about .container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: #31064e;
+    background-size: cover;
+    padding-left: 2rem;
+}
+
+#about .container .title {
+    width: 80%;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 0 10rem;
+}
+
+#about .container .title h1{
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 2rem;
+    text-align: left;
+}
+
+#about .container .title p{
+    color: #fff;
+    width: 500px;
+    margin-top: 30px;
+    text-align: justify;
+}
+
+#about .container .slider {
+    position: relative;
+    right: 15%;
+    width: 900px; /* Defina a largura desejada */
+    height: 300px; /* Defina a altura desejada */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra preta */
+    overflow: hidden; /* Impede que os slides ultrapassem o tamanho da box */
+}
+
+#about .container .slider .slides {
+    /* Configuração para flexibilizar a organização dos slides */
+    display: flex;
+    animation: slide 20s infinite;
+}
+
+#about .container .slider .slide {
+    /* Esconder slides que não estão ativos */
+    display: none;
+}
+
+#about .container .slider .active {
+    /* Exibir o slide ativo */
+    display: block;
+}
+
+@keyframes slide {
+    0% { left: 0; }
+    20% { left: -100%; }
+    40% { left: -200%; }
+    60% { left: -300%; }
+    80% { left: -400%; }
+    100% { left: -400%; }
+}
+
+#about .container .slider .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+/*
 #about .container{
     width: 100%;
     height: 100vh;
