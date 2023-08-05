@@ -56,7 +56,18 @@
         <div class="container">
             <div class="title">
                 <h1>Sobre a empresa:</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, dolore officia. Magni quidem consequuntur, cumque dolor distinctio dolorem iusto optio doloribus tempore quaerat veritatis cupiditate unde minima molestias adipisci repellat!</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, dolore officia. Magni quidem consequuntur, cumque dolor distinctio dolorem iusto optio doloribus tempore quaerat veritatis cupiditate unde minima molestias adipisci repellat! Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero aut facilis aspernatur dicta fuga consequatur pariatur impedit ducimus quae corporis, dolorum in commodi nemo. Quidem fugiat fuga architecto minus porro! Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur ex debitis eum, itaque odio ipsa, praesentium temporibus omnis aliquid sint, odit perferendis quae natus laboriosam? Temporibus quia vel dignissimos sit. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur neque blanditiis ratione eligendi omnis fuga numquam non, consectetur molestiae aliquam incidunt laboriosam illo? Optio eligendi nisi ipsa minima temporibus. Voluptatibus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis quidem fuga tenetur. Esse quasi tenetur eveniet quidem facilis quisquam accusamus cumque minus nulla repudiandae labore, harum optio autem tempore delectus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium consequatur numquam earum unde molestiae omnis, hic nihil quaerat mollitia aut in fuga perspiciatis ratione cupiditate quidem assumenda expedita asperiores culpa.</p>
+            </div>
+            <div class="slider">
+                <div class="slide active">
+                    <img src="/projeto p/images/background.jpeg" alt="Slide 1">
+                </div>
+                <div class="slide">
+                    <img src="/projeto p/images/background.png" alt="Slide 2">
+                </div>
+                <div class="slide">
+                    <img src="/projeto p/images/background2.jpeg" alt="Slide 3">
+                </div>
             </div>
         </div>
     </section>
@@ -101,6 +112,23 @@
                 // Atualiza a referência para a nova linha criada
                 currentLine = line;
             });
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+            const slides = document.querySelectorAll(".slide");
+            let currentSlide = 0;
+
+            function showSlide(index) {
+                slides.forEach((slide, idx) => {
+                    slide.classList.toggle("active", idx === index);
+                });
+            }
+
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            }
+
+            setInterval(nextSlide, 2000);
         });
     </script>
 </body>
