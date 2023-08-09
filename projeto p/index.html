@@ -26,14 +26,14 @@
         </div>
         <div class="menu-mobile">
             <ul>
-                <li><a href="#home">Início</a></li>
-                <li><a href="#about">Nossa história</a></li>
+                <li><a href="#home" class="nav-link">Início</a></li>
+                <li><a href="#about" class="nav-link">Nossa história</a></li>
                 <li><a href="https://wa.me//5567998189284?text=Ol&#225&#44%20gostaria%20de%20fazer%20um%20pedido&#33">Peçaí o seu</a></li>
-                <li><a href="#contact">Trabalhe conosco</a></li>
+                <li><a href="#contact" id="contact-link">Trabalhe conosco</a></li>
             </ul>
         </div>
         <div class="btn-mobile">
-            <ion-icon name="grid-outline"></ion-icon>
+            <ion-icon class="menu-icon" name="grid-outline"></ion-icon>
         </div>
     </header>
     <main id="home">
@@ -56,17 +56,17 @@
         <div class="container">
             <div class="title">
                 <h1>Sobre a empresa:</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, dolore officia. Magni quidem consequuntur, cumque dolor distinctio dolorem iusto optio doloribus tempore quaerat veritatis cupiditate unde minima molestias adipisci repellat! Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero aut facilis aspernatur dicta fuga consequatur pariatur impedit ducimus quae corporis, dolorum in commodi nemo. Quidem fugiat fuga architecto minus porro! Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur ex debitis eum, itaque odio ipsa, praesentium temporibus omnis aliquid sint, odit perferendis quae natus laboriosam? Temporibus quia vel dignissimos sit. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur neque blanditiis ratione eligendi omnis fuga numquam non, consectetur molestiae aliquam incidunt laboriosam illo? Optio eligendi nisi ipsa minima temporibus. Voluptatibus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis quidem fuga tenetur. Esse quasi tenetur eveniet quidem facilis quisquam accusamus cumque minus nulla repudiandae labore, harum optio autem tempore delectus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium consequatur numquam earum unde molestiae omnis, hic nihil quaerat mollitia aut in fuga perspiciatis ratione cupiditate quidem assumenda expedita asperiores culpa.</p>
+                <p>Começamos os trabalhos em 2018, e desde então nos orgulhamos de sermos os pioneiros no delivery de Jardim-Ms. Temos como missão entregar o melhor açaí e hambúrgueres por um preço justo e pensado em cada necessidade de cada cliente. Nossa visão, é ser a marca que inspira carinho, gentileza e alegria para quem trabalha e quem consome nossos produtos. E nossos valores são: INCLUSÃO, HONESTIDADE, COMPROMETIMENTO, DEDICAÇÃO E RESPEITO.</p>
             </div>
             <div class="slider">
                 <div class="slide active">
-                    <img src="/projeto p/images/background.jpeg" alt="Slide 1">
+                    <img src="/images/background.jpeg" alt="Slide 1">
                 </div>
                 <div class="slide">
-                    <img src="/projeto p/images/background.png" alt="Slide 2">
+                    <img src="/images/background.png" alt="Slide 2">
                 </div>
                 <div class="slide">
-                    <img src="/projeto p/images/background2.jpeg" alt="Slide 3">
+                    <img src="/images/background2.jpeg" alt="Slide 3">
                 </div>
             </div>
         </div>
@@ -90,9 +90,25 @@
     <script>
         $(document).ready(function(){
             $(".btn-mobile").click(function(){
-                $(".menu-mobile").slideToggle("slow")
-            })
-        })
+                $(".menu-mobile").slideToggle("slow");
+                toggleBtnMobileIcon();
+            });
+
+            $(".menu-mobile a").click(function(event) {
+                $(".menu-mobile").slideUp("slow", function() {
+                    toggleBtnMobileIcon();
+                    window.location = $(event.target).attr("href"); // Segue o link após o fechamento
+                });
+            });
+
+            function toggleBtnMobileIcon() {
+                if ($(".menu-mobile").is(":visible")) {
+                    $(".btn-mobile ion-icon").attr("name", "close-outline").addClass("rotate-animation");;
+                } else {
+                    $(".btn-mobile ion-icon").attr("name", "grid-outline").removeClass("rotate-animation");
+                }
+            }
+        });
 
         const links = document.querySelectorAll('.menu a');
         let currentLine = null;
@@ -130,6 +146,45 @@
 
             setInterval(nextSlide, 2000);
         });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const contactLink = document.getElementById("contact-link");
+            const iconsSection = document.querySelector("#home .container .icons");
+            const navLinks = document.querySelectorAll(".nav-link");
+
+            contactLink.addEventListener("click", function () {
+                // Remova a classe .icons da seção #home
+                iconsSection.style.display = "none";
+            });
+
+            // Adicione um evento de clique a cada link com a classe .nav-link
+            navLinks.forEach(link => {
+                link.addEventListener("click", function () {
+                    // Exiba novamente a classe .icons na seção #home
+                    iconsSection.style.display = "flex";
+                });
+            });
+        });
+        
+        document.addEventListener("DOMContentLoaded", function () {
+            const btnMobile = document.querySelector(".btn-mobile");
+            const menuIcon = document.querySelector(".menu-icon");
+
+            btnMobile.addEventListener("click", function () {
+               // Troque o ícone do menu pelo ícone de fechar e adicione a classe de animação
+                if (menuIcon.getAttribute("name") === "grid-outline") {
+                    menuIcon.setAttribute("name", "close-outline");
+                    menuIcon.classList.add("rotate-animation");
+                } else {
+                    menuIcon.setAttribute("name", "grid-outline");
+                    menuIcon.classList.remove("rotate-animation");
+                }
+
+                // Outras ações do menu móvel, como mostrar/ocultar o menu
+                // ...
+            });
+        });
+
     </script>
 </body>
 </html>
