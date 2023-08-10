@@ -88,26 +88,28 @@
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script>
-        $(document).ready(function(){
-            $(".btn-mobile").click(function(){
+        $(document).ready(function() {
+            $(".btn-mobile").click(function() {
                 $(".menu-mobile").slideToggle("slow");
-                toggleBtnMobileIcon();
-            });
-
-            $(".menu-mobile a").click(function(event) {
-                $(".menu-mobile").slideUp("slow", function() {
-                    toggleBtnMobileIcon();
-                    window.location = $(event.target).attr("href"); // Segue o link após o fechamento
-                });
-            });
-
-            function toggleBtnMobileIcon() {
-                if ($(".menu-mobile").is(":visible")) {
-                    $(".btn-mobile ion-icon").attr("name", "close-outline").addClass("rotate-animation");;
+                
+                // Trocar o ícone do botão
+                const btnIcon = $(this).find("ion-icon");
+                if (btnIcon.attr("name") === "grid-outline") {
+                    btnIcon.attr("name", "close-outline");
+                    btnIcon.addClass("rotate-animation");
                 } else {
-                    $(".btn-mobile ion-icon").attr("name", "grid-outline").removeClass("rotate-animation");
+                    btnIcon.attr("name", "grid-outline");
+                    btnIcon.css("transform", "rotate(0deg)");
+                    btnIcon.removeClass("rotate-animation");
                 }
-            }
+            });
+
+            // Fechar o menu mobile ao clicar em um link
+            $(".menu-mobile a").click(function() {
+                $(".menu-mobile").slideUp("slow");
+                $(".btn-mobile ion-icon").attr("name", "grid-outline");
+                $(".btn-mobile ion-icon").css("transform", "rotate(0deg)");
+            });
         });
 
         const links = document.querySelectorAll('.menu a');
@@ -165,26 +167,6 @@
                 });
             });
         });
-        
-        document.addEventListener("DOMContentLoaded", function () {
-            const btnMobile = document.querySelector(".btn-mobile");
-            const menuIcon = document.querySelector(".menu-icon");
-
-            btnMobile.addEventListener("click", function () {
-               // Troque o ícone do menu pelo ícone de fechar e adicione a classe de animação
-                if (menuIcon.getAttribute("name") === "grid-outline") {
-                    menuIcon.setAttribute("name", "close-outline");
-                    menuIcon.classList.add("rotate-animation");
-                } else {
-                    menuIcon.setAttribute("name", "grid-outline");
-                    menuIcon.classList.remove("rotate-animation");
-                }
-
-                // Outras ações do menu móvel, como mostrar/ocultar o menu
-                // ...
-            });
-        });
-
     </script>
 </body>
 </html>
